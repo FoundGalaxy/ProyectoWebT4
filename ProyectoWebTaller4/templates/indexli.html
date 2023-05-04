@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Rojas</title>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="container__header">
+                <div class="logo">
+                    <img src="../static/media/logo.png" alt="">
+                </div>
+
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="./indexli.html">Inicio</a></li>
+                            <li><a href="./especialidades.html">Especialidades</a></li>
+                            <li><a href="./servicios.html">Servicios</a></li>
+                            <li><a href="./registrarpaciente.html">Pacientes</a></li>
+                            <li> <a href="./citas.html"> Citas </a> </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <i class="fa-solid fa-bars" id="icon_menu"></i>
+                <h3 class="menu">
+                    {{session.username}} </br>            
+               </h3>
+               <a href="{{ url_for('logout') }}" class="btn">LO</a>
+        </div>
+    </header>
+
+    <main>
+
+
+        
+
+    </main>
+    
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

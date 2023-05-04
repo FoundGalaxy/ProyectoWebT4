@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Rojas</title>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="container__header">
+                <div class="logo">
+                    <img src="../static/media/logo.png" alt="">
+                </div>
+
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="./indexli.html">Inicio</a></li>
+                            <li><a href="./especialidades.html">Especialidades</a></li>
+                            <li><a href="./servicios.html">Servicios</a></li>
+                            <li><a href="./registrarpaciente.html">Pacientes</a></li>
+                            <li> <a href="./citas.html"> Citas </a> </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <i class="fa-solid fa-bars" id="icon_menu"></i>
+
+                <h3 class="menu">
+                    {{session.username}} </br>            
+               </h3>
+               <a href="{{ url_for('logout') }}" class="btn">LO</a>
+        </div>
+    </header>
+
+    <main>
+
+        <h1 class="text-center mt-5 mb-5 text-primary">Registro de pacientes</h1>
+
+        <div class="container"> 
+            <div class="card shadow">
+                <div class="card-body">
+                    <form action="/rp" method="POST">
+                        <div class="row mb-3">
+                            <div class="col-2">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control mb-3" name="nombre">
+                            </div>
+                            <div class="col-2">
+                                <label>Apellido paterno</label>
+                                <input type="text" class="form-control mb-3" name="ap_paterno">
+                            </div>
+                            <div class="col-2">
+                                <label>Apellido materno</label>
+                                <input type="text" class="form-control mb-3" name="ap_materno">
+                            </div>
+                            <div class="col-2">
+                                <label>Fecha de nacimiento</label>
+                                <div class="input-group date" id="datepicker">
+                                  <input type="date" class="form-control" id="date" name="f_nac"/>
+                                  <span class="input-group-append">
+                                  </span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label>Edad</label>
+                                <input type="text" class="form-control mb-3" name="edad">
+                            </div>
+                            <div class="col">
+                                <label>Genero</label>
+                                <input type="text" class="form-control mb-3" name="genero">
+                            </div>
+                            <div class="col-2">
+                                <label>Estado Civil</label>
+                                <input type="text" class="form-control mb-3" name="est_civil">
+                            </div>
+                            <div class="col-4">
+                                <label>Tratamiento</label>
+                                <input type="text" class="form-control mb-3" name="tratamiento">
+                            </div>
+                            <div class="col">
+                                <label>No.Familiares</label>
+                                <input type="text" class="form-control mb-3" name="Num_fam">
+                            </div>
+                            <div class="col-2">
+                                <label>Nacionalidad</label>
+                                <input type="text" class="form-control mb-3" name="nacionalidad">
+                            </div>
+                            <div class="col-2">
+                                <label>Estado</label>
+                                <input type="text" class="form-control mb-3" name="Estado">
+                            </div>
+                            <div class="col-2">
+                                <label>Municipio</label>
+                                <input type="text" class="form-control mb-3" name="Municipio">
+                            </div>
+                            <div class="col-6">
+                                <label>Direccion</label>
+                                <input type="text" class="form-control mb-3" name="direccion">
+                            </div>
+                            <div class="col-2">
+                                <label>CP</label>
+                                <input type="text" class="form-control mb-3" name="zip">
+                            </div>
+                            <div class="col-3">
+                                <label>Telefono</label>
+                                <input type="text" class="form-control mb-3" name="telefono">
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary mb-3 mt-4" type="submit" id="">Registrar</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <!-- Tabla -->
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">A_paterno</th>
+                            <th scope="col">A_materno</th>
+                            <th scope="col">FN</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Genero</th>
+                            <th scope="col">Estado Civil</th>
+                            <th scope="col">Tratamiento</th>
+                            <th scope="col">No.Fam</th>
+                            <th scope="col">Nacionalidad</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Municipio</th>
+                            <th scope="col">Direccion</th>
+                            <th scope="col">CP</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                        </thead>
+                        <tbody>
+                            {% for d in data %}
+                                <tr>
+                                    <td>{{d.folio}}</td>
+                                    <td>{{d.nombre}}</td>
+                                    <td>{{d.ap_paterno}}</td>
+                                    <td>{{d.ap_materno}}</td>
+                                    <td>{{d.fecha_nacimiento}}</td>
+                                    <td>{{d.edad}}</td>
+                                    <td>{{d.genero}}</td>
+                                    <td>{{d.estado_civil}}</td>
+                                    <td>{{d.tratamiento}}</td>
+                                    <td>{{d.num_familiares}}</td>
+                                    <td>{{d.nacionalidad}}</td>
+                                    <td>{{d.estado}}</td>
+                                    <td>{{d.municipio}}</td>
+                                    <td>{{d.direccion}}</td>
+                                    <td>{{d.codigo_postal}}</td>
+                                    <td>{{d.telefono}}</td>
+                                    <td><button class="btn btn-primary btn-sm" id="btn-edit{{d.folio}}" data-bs-toggle="modal" data-bs-target="#modal{{d.folio}}">Editar</button></td>
+                                    <td><a href="{{url_for('delete', folio=d.folio)}}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                                </tr>
+                                
+                                <!-- Modal -->
+                                    <div class="modal fade" id="modal{{d.folio}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">{{d.folio}}</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                
+                                                    <form action="/edit/{{d.folio}}" method="POST">
+                                                        <label>Nombre</label>
+                                                        <input type="text" class="form-control mb-3" name="nombre" value="{{d.nombre}}">
+                                                        <label>Apellido paterno</label>
+                                                        <input type="text" class="form-control mb-3" name="ap_paterno" value="{{d.ap_paterno}}">
+                                                        <label>Apellido materno</label>
+                                                        <input type="text" class="form-control mb-3" name="ap_materno" value="{{d.ap_materno}}">
+                                                        <label>Fecha de nacimiento</label>
+                                                        <div class="input-group date" id="datepicker">
+                                                        <input type="date" class="form-control" id="date" name="f_nac" value="{{d.fecha_nacimiento}}"/>
+                                                        <span class="input-group-append">
+                                                        </span>
+                                                        </div>
+                                                        <label>Edad</label>
+                                                        <input type="text" class="form-control mb-3" name="edad" value="{{d.edad}}">
+                                                        <label>Genero</label>
+                                                        <input type="text" class="form-control mb-3" name="genero" value="{{d.genero}}">
+                                                        <label>Estado Civil</label>
+                                                        <input type="text" class="form-control mb-3" name="est_civil" value="{{d.estado_civil}}">
+                                                        <label>Tratamiento</label>
+                                                        <input type="text" class="form-control mb-3" name="tratamiento" value="{{d.tratamiento}}">
+                                                        <label>No.Familiares</label>
+                                                        <input type="text" class="form-control mb-3" name="Num_fam" value="{{d.num_familiares}}">
+                                                        <label>Nacionalidad</label>
+                                                        <input type="text" class="form-control mb-3" name="nacionalidad" value="{{d.nacionalidad}}">
+                                                        <label>Estado</label>
+                                                        <input type="text" class="form-control mb-3" name="Estado" value="{{d.estado}}">
+                                                        <label>Municipio</label>
+                                                        <input type="text" class="form-control mb-3" name="Municipio" value="{{d.municipio}}">
+                                                        <label>Direccion</label>
+                                                        <input type="text" class="form-control mb-3" name="direccion" value="{{d.direccion}}">
+                                                        <label>CP</label>
+                                                        <input type="text" class="form-control mb-3" name="zip" value="{{d.codigo_postal}}">
+                                                        <label>Telefono</label>
+                                                        <input type="text" class="form-control mb-3" name="telefono" value="{{d.telefono}}">
+                                                    </form>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+  
+
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        
+
+    </main>
+    
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

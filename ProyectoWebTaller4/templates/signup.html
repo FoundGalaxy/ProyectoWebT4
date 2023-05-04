@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container__header">
+                <div class="logo">
+                    <img src="../static/media/logo.png" alt="">
+                </div>
+
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="./index.html">Inicio</a></li>
+                            <li><a href="./especialidades.html">Especialidades</a></li>
+                            <li><a href="./servicios.html">Servicios</a></li>
+                            <li><a href="./quienessomos.html">Quienes Somos</a></li>
+                            <li><a href="./contactanos.html">Contactanos</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <i class="fa-solid fa-bars" id="icon_menu"></i>
+
+                <div class="header__register">
+                    <input type="button" class="btn__header-register" value="Solicitar Cita">
+                </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <h1>Registro</h1>
+        <form method="POST" action="#">
+            <div class="msg">{{ msg }}</div>
+            <input id="username" name="username" type="text" placeholder="Usuario">
+            <input id="password" name="password" type="password" placeholder="Contraseña">
+            <input id="mail" name="mail" type="text" placeholder="Correo">
+            <button type="submit">Registrarse</button>
+        </form>
+        <div class="terms">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox">Acepto <a href="/templates/termsandconditions.html"> terminos y condiciones.</a> </label>
+        </div>
+        <div class="usuario">
+            Ya tienes una cuenta? <a href="./login.html"> Inicia sesion </a>
+        </div>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
